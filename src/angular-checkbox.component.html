@@ -1,0 +1,9 @@
+﻿<div class="CheckboxField">
+	<input class="CheckboxField-field" type="checkbox" id="{{checkbox.checkboxId}}" ng-model="checkbox.isChecked" ng-change="checkbox.updateIsChecked()" ng-disabled="checkbox.disable" />
+	<label class="CheckboxField-label" for="{{checkbox.checkboxId}}">
+		<span class="CheckboxField-labelBox">
+			<span class="CheckboxField-labelCheckIcon" ng-bind-html="checkbox.icon"></span>
+		</span>
+		<span class="CheckboxField-labelText">{{checkbox.label}}</span>
+	</label>
+</div>

@@ -1,0 +1,92 @@
+﻿@import '~angular-shared-scss/src/settings';
+
+$CheckboxField-labelBox-height: 1rem !default;
+$CheckboxField-labelBox-width: 1rem !default;
+$CheckboxField-labelBox-marginRight: 0.5rem !default;
+$CheckboxField-labelBox-backgroundColor: $white !default;
+$CheckboxField-labelBox-borderWidth: 0.0625rem !default;
+$CheckboxField-labelBox-borderColor: $sirocco-7 !default;
+$CheckboxField-labelBox-borderStyle: solid !default;
+$CheckboxField-labelBox-borderRadius: 0.25rem !default;
+$CheckboxField-labelCheckIcon-height: 0.75rem !default;
+$CheckboxField-labelCheckIcon-width: 0.75rem !default;
+$CheckboxField-labelCheckIcon-fill: $astral-1 !default;
+
+.CheckboxField {
+	position: relative;
+
+	&-field {
+		position: absolute;
+		height: 0;
+		width: 0;
+        margin: 0;
+        padding: 0;
+	}
+
+	&-label {
+		align-items: center;
+		display: flex;
+	}
+
+	&-labelBox {
+		align-items: center;
+		border-width: $CheckboxField-labelBox-borderWidth;
+		display: flex;
+		height: $CheckboxField-labelBox-height;
+		justify-content: center;
+		margin-right: $CheckboxField-labelBox-marginRight;
+		width: $CheckboxField-labelBox-width;
+		background-color: $CheckboxField-labelBox-backgroundColor;
+		border-color: $CheckboxField-labelBox-borderColor;
+		border-style: $CheckboxField-labelBox-borderStyle;
+		border-radius: $CheckboxField-labelBox-borderRadius;
+	}
+
+	&-labelCheckIcon {
+		display: none;
+
+        & > svg {
+            display: block;
+		    height: $CheckboxField-labelCheckIcon-height;
+		    width: $CheckboxField-labelCheckIcon-width;
+        }
+	}
+
+	&-label:hover {	
+        .CheckboxField-labelCheckIcon {
+			display: block;
+            opacity: 0.5;
+
+			& > svg * {
+				fill: $CheckboxField-labelCheckIcon-fill !important;
+			}
+		}
+	}
+
+	&-field:checked + &-label, &-field:checked + &-label:hover {
+		.CheckboxField-labelCheckIcon {
+			display: block;
+            opacity: 1;
+
+			& > svg * {
+				fill: $CheckboxField-labelCheckIcon-fill !important;
+			}
+		}
+	}
+
+	&-field:disabled + &-label {
+		.CheckboxField-labelBox {
+            opacity: 0.5;
+		}
+	}
+	&-field:disabled + &-label:hover {
+		.CheckboxField-labelCheckIcon {
+			opacity: 0;
+		}
+	}
+	&-field:checked:disabled + &-label:hover {
+		.CheckboxField-labelCheckIcon {
+			opacity: 1;
+		}
+	}
+}

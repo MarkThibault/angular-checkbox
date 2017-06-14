@@ -1,0 +1,8 @@
+<div class="Wrapper">
+    <div>
+        <angular-checkbox label="{{app.checkboxLabel}}" checkbox-id="check1" is-checked="app.checkboxChecked" on-update="app.toggleThis($event);" disable="app.disableStatus()"></angular-checkbox>
+    </div>
+    <div>
+        <button ng-click="app.toggleDisable()">Toggle Disable</button>
+    </div>
+</div>
