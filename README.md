@@ -9,7 +9,8 @@ This is a checkbox component.
 ### Installing
 
 ```
-npm install --save angular-checkbox
+Add the following to your dependencies:
+"angular-checkbox": "git://github.com/MarkThibault/angular-checkbox.git",
 ```
 
 ### Usage
